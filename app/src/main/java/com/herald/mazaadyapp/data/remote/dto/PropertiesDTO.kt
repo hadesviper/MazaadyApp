@@ -62,7 +62,7 @@ data class PropertiesDTO(
                     }.plus(
                         Properties.Data.Option(
                         id = -1,
-                        name = "خيار اخر : "
+                        name = "خيار اخر"
                     ))
                 )
             }

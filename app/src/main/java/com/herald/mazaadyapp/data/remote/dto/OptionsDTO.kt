@@ -3,7 +3,6 @@ package com.herald.mazaadyapp.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
 import com.herald.mazaadyapp.domain.models.Options
-import com.herald.mazaadyapp.domain.models.Properties
 
 data class OptionsDTO(
     @SerializedName("code")
@@ -62,7 +61,7 @@ data class OptionsDTO(
                     }.plus(
                         Options.Data.Option(
                             id = -1,
-                            name = "خيار اخر : "
+                            name = "خيار اخر"
                         ))
                 )
             }

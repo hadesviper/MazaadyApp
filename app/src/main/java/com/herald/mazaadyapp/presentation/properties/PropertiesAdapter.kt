@@ -1,13 +1,11 @@
 package com.herald.mazaadyapp.presentation.properties
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.herald.mazaadyapp.common.Constants
 import com.herald.mazaadyapp.databinding.PropertiesRecyclerBinding
@@ -55,7 +53,7 @@ class PropertiesAdapter(
                     if (item.options[index].id == -1) {
                         otherOptionTextLayout.visibility = View.VISIBLE
                         otherOptionText.addTextChangedListener {
-                                Constants.arrAllItems[item.name + item.options[index].name] =
+                                Constants.arrAllItems[item.name + " ${item.options[index].name}: " ] =
                                     otherOptionText.text.toString()
                         }
                         recyclerOptions.adapter = null

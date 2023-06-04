@@ -48,7 +48,7 @@ class OptionsAdapter(
                     if (item.options[index].id == -1) {
                         otherOptionTextLayout.visibility = View.VISIBLE
                         otherOptionText.addTextChangedListener {
-                            Constants.arrAllItems[item.name +item.options[index].name] = otherOptionText.text.toString()
+                            Constants.arrAllItems[item.name + " ${item.options[index].name}: "] = otherOptionText.text.toString()
                         }
                         recyclerOptions.adapter = null
                     } else {
