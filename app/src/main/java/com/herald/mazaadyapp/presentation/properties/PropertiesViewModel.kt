@@ -38,6 +38,9 @@ class PropertiesViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
+    fun resetData(){
+        _state.value = PropertiesState()
+    }
     data class PropertiesState(
         val isLoading:Boolean = false,
         val properties: Properties? = null,

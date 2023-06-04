@@ -17,7 +17,7 @@ import com.herald.mazaadyapp.presentation.options.OptionsViewModel
 import com.herald.mazaadyapp.presentation.properties.PropertiesAdapter
 import com.herald.mazaadyapp.presentation.properties.PropertiesViewModel
 
-class MainFragment :Fragment(R.layout.main_fragment){
+class MainFragment : Fragment(R.layout.main_fragment) {
 
     private val binding: MainFragmentBinding by lazy { MainFragmentBinding.inflate(layoutInflater) }
 
@@ -39,7 +39,6 @@ class MainFragment :Fragment(R.layout.main_fragment){
 
         categoriesViewModel.state.observe(viewLifecycleOwner) { state ->
             binding.loadingMain.visibility = if (state.isLoading) View.VISIBLE else View.INVISIBLE
-
             if (state.categories != null) {
                 allCategories = state.categories
                 binding.spinCategories.setItems(allCategories.categories.map { it.name }
@@ -47,7 +46,10 @@ class MainFragment :Fragment(R.layout.main_fragment){
             }
 
             if (state.error != null) {
-                Utils.showErrorDialog(state.error, requireContext()) { categoriesViewModel.getCategories() }
+                Utils.showErrorDialog(
+                    state.error,
+                    requireContext()
+                ) { categoriesViewModel.getCategories() }
             }
         }
 
@@ -79,7 +81,7 @@ class MainFragment :Fragment(R.layout.main_fragment){
         }
 
 
-        optionsViewModel.state.observe(viewLifecycleOwner){state->
+        optionsViewModel.state.observe(viewLifecycleOwner) { state ->
             binding.loadingMain.visibility = if (state.isLoading) View.VISIBLE else View.INVISIBLE
         }
 
@@ -96,7 +98,12 @@ class MainFragment :Fragment(R.layout.main_fragment){
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
         Constants.arrAllItems.clear()
-        binding.spinCategories.clear()
-        binding.spinSubCategories.clear()
+        binding.apply {
+            spinCategories.clear()
+            spinSubCategories.clear()
+            spinCategories.setItems(emptyArray<String>())
+            spinSubCategories.setItems(emptyArray<String>())
+        }
+        propertiesViewModel.resetData()
     }
 }
