@@ -1,4 +1,4 @@
-package com.herald.mazaadyapp.presentation.fragments
+package com.herald.mazaadyapp.presentation.categories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -82,7 +82,7 @@
                 android:layout_margin="10dp"
                 android:padding="10dp"
                 android:textColor="@color/white"
-                android:text="Submit"/>
+                android:text="	Submit	"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSecondary"
@@ -91,7 +91,7 @@
                 android:layout_margin="10dp"
                 android:padding="10dp"
                 android:textColor="@color/white"
-                android:text=" Next "/>
+                android:text="Blank Screen"/>
         </LinearLayout>
 
 

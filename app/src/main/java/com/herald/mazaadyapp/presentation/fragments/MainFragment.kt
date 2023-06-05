@@ -64,6 +64,8 @@ class MainFragment : Fragment(R.layout.main_fragment) {
         }
 
         binding.spinSubCategories.setOnItemClickListener { index ->
+            Constants.arrAllItems.clear()
+            Constants.arrAllItems["التصنيف"] = allCategories.categories[index].name
             Constants.arrAllItems["التصنيف الفرعي"] = subCategories[index].name
             propertiesViewModel.getProperties(subCategories[index].id)
         }

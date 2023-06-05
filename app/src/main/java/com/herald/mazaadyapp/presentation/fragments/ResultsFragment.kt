@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.herald.mazaadyapp.R
 import com.herald.mazaadyapp.common.Constants
 import com.herald.mazaadyapp.databinding.ResultsFragmentBinding
+import com.herald.mazaadyapp.presentation.categories.ResultsAdapter
 
 class ResultsFragment :Fragment(R.layout.results_fragment){
 

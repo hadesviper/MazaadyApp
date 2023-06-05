@@ -8,21 +8,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_margin="10dp"
+        android:orientation="horizontal"
         android:weightSum="2">
-        <TextView
-            android:textDirection="rtl"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/valText"/>
 
         <TextView
-            android:textDirection="rtl"
-            android:layout_weight="1"
+            android:id="@+id/valText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/keyText"/>
+            android:layout_weight="1"
+            android:textDirection="rtl" />
+
+        <TextView
+            android:id="@+id/keyText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textDirection="rtl" />
     </LinearLayout>
 </layout>
